@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  data: () => ({}),
   props: {
     label: {
       type: String,
@@ -40,7 +41,7 @@ export default {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
-  margin-bottom:4px;
+  margin-bottom: 4px;
 }
 .form-input input {
   padding: 9px 13px;
