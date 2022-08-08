@@ -11,6 +11,7 @@ export default createStore({
     green: "green",
     green1: "green1",
     isOpenModal: false,
+    isOpenPoppup: false,
     selectCity: {
       label: "Город*",
       options: [
@@ -58,6 +59,14 @@ export default createStore({
     openModalSPB(state){
         state.isOpenModal=true;
         state.setSelect=2;
+    },
+    sendData(state){
+        state.isOpenModal=false;
+        state.isOpenPoppup=true;
+    },
+    closeModal(state){
+        state.isOpenPoppup=false;
+        state.isOpenModal=false;
     }
   },
   actions: {},

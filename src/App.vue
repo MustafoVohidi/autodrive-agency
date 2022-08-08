@@ -34,12 +34,22 @@
         </div>
         <div class="button-close-modal">
           <div class="button-item">
-            <AppButton :className="$store.state.green1" @click="sendData">
+            <AppButton :className="$store.state.green1" @click="$store.commit('sendData')">
               Отправить
             </AppButton>
           </div>
         </div>
       </form>
+    </AppModal>
+    <AppModal v-if="$store.state.isOpenPoppup">
+        <h3 class="header-form">Данные отправлены успешно!</h3>
+         <div class="button-close-modal">
+          <div class="button-item">
+            <AppButton :className="$store.state.green1" @click="$store.commit('closeModal')">
+              Закрыть
+            </AppButton>
+          </div>
+        </div>
     </AppModal>
   </div>
 </template>

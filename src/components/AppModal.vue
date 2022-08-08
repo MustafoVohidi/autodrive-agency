@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" @click="closeModal1">
+  <div class="modal" @click="$store.commit('closeModal')">
     <div class="modal-content" @click.stop>
       <div class="modal-form">
         <slot> </slot>
