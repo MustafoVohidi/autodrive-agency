@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import axios from "axios";
 export default createStore({
   state: {
     postData: {
@@ -43,31 +44,44 @@ export default createStore({
         name: "email",
       },
     ],
-    setSelect:1,
+    setSelect: 1,
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
-    openModalKZN(state){
-        state.isOpenModal=true;
-        state.setSelect=3;
+    openModalKZN(state) {
+      state.isOpenModal = true;
+      state.setSelect = 3;
     },
-    openModalMoscow(state){
-        state.isOpenModal=true;
-        state.setSelect=1;
+    openModalMoscow(state) {
+      state.isOpenModal = true;
+      state.setSelect = 1;
     },
-    openModalSPB(state){
-        state.isOpenModal=true;
-        state.setSelect=2;
+    openModalSPB(state) {
+      state.isOpenModal = true;
+      state.setSelect = 2;
     },
-    sendData(state){
-        state.isOpenModal=false;
-        state.isOpenPoppup=true;
+    sendData(state) {
+      axios
+        .post(
+          "http://hh.autodrive-agency.ru/test-tasks/front/task-7/",
+          state.postData
+        )
+        .then(function (response) {
+            state.isOpenModal = false;
+            state.isOpenPoppup = true;
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        }).finally(()=>{
+            state.isOpenModal = false;
+            state.isOpenPoppup = true;
+        });
     },
-    closeModal(state){
-        state.isOpenPoppup=false;
-        state.isOpenModal=false;
-    }
+    closeModal(state) {
+      state.isOpenPoppup = false;
+      state.isOpenModal = false;
+    },
   },
   actions: {},
   modules: {},
