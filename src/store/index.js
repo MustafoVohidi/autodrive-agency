@@ -42,12 +42,22 @@ export default createStore({
         name: "email",
       },
     ],
+    setSelect:1,
   },
   getters: {
   },
   mutations: {
-    openModal(state){
+    openModalKZN(state){
         state.isOpenModal=true;
+        state.setSelect=3;
+    },
+    openModalMoscow(state){
+        state.isOpenModal=true;
+        state.setSelect=1;
+    },
+    openModalSPB(state){
+        state.isOpenModal=true;
+        state.setSelect=2;
     }
   },
   actions: {},

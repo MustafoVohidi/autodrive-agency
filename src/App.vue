@@ -1,10 +1,10 @@
 <template>
   <div class="app">
     <div class="button-group">
-      <AppButton :className="$store.state.blue" @click="$store.commit('openModal')">
+      <AppButton :className="$store.state.blue" @click="$store.commit('openModalMoscow')">
         Заказать в Москву
       </AppButton>
-      <AppButton :className="$store.state.green" @click="$store.commit('openModal')">
+      <AppButton :className="$store.state.green" @click="$store.commit('openModalSPB')">
         Заказать в Санкт-Петербурге
       </AppButton>
     </div>

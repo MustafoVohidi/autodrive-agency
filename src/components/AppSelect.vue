@@ -1,7 +1,7 @@
 <template>
   <div class="form-input">
     <label>{{ label }}</label>
-    <select value="1">
+    <select :value="$store.state.setSelect">
       <option
         v-for="option in options"
         :value="option.value"
